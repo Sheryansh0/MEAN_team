@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  .container
+    .row.banner.text-center.mb-4
+      .col-12
+        h1.mb-3 Donations Form
+        p.lead Your support makes a difference. Please fill out the form below to make a donation.
+
+    .row
+      .col-12.col-md-8
+        .card.shadow-sm
+          .card-body
+            h2.d-none.d-md-block.mb-4 Make a Donation
+            form(action="/location", method="get", role="form")
+              .form-group
+                label(for="name") Name
+                input#name.form-control(name="name", placeholder="Enter your name")
+              .form-group
+                label(for="rating") Donation Amount
+                input#rating.form-control(name="rating", type="number", min="0", step="1", placeholder="Choose amount")
+              .form-group
+                label(for="review") Feedback
+                textarea#review.form-control(name="review", rows="5", placeholder="Share your feedback")
+              .form-group.text-right
+                button.btn.btn-primary(type="submit") Donate Now
+
+      .col-12.col-md-4
+        .card.shadow-sm
+          .card-body
+            h3.mb-3 Why Donate?
+            p Your contribution helps us to achieve our mission and make a positive impact. 
+            ul
+              li Support our projects
+              li Help those in need
+              li Be a part of something bigger
+            p.text-center
+              a.btn.btn-outline-primary(href="/learn-more") Learn More
+
